@@ -1,0 +1,50 @@
+name: TPIC Crawler
+
+on:
+  schedule:
+    # Runs every 15 minutes
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    # Allows manual trigger from the GitHub UI
+
+jobs:
+  scrape-and-notify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Need this to commit the updated JSON file
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Crawler
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          KEYWORDS: "boru, pompa, vinç, kamyon, kiralama, hidrolik, jeneratör" # Adjust as needed
+        run: |
+          python crawler.py
+
+      - name: Commit and Push state changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Only commit if there are changes to seen_tenders.json
+          if [[ -n $(git status -s seen_tenders.json) ]]; then
+            git add seen_tenders.json
+            git commit -m "chore: update seen tenders [skip ci]"
+            git push
+          else
+            echo "No new tenders found. Nothing to commit."
+          fi
