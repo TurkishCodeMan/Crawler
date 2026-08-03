@@ -31,7 +31,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          KEYWORDS: "boru, pompa, vinç, kamyon, kiralama, hidrolik, jeneratör" # Adjust as needed
+          KEYWORDS: "kamyon,kepçe,yemek,traktör,kiralama,doğrudan temin,arazöz,sulama,tanker" # Adjust as needed
         run: |
           python crawler.py
 
