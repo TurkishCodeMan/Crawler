@@ -43,7 +43,7 @@ jobs:
           # Only commit if there are changes to seen_tenders.json
           if [[ -n $(git status -s seen_tenders.json) ]]; then
             git add seen_tenders.json
-            git commit -m "chore: update seen tenders [skip ci]"
+            git commit -m "chore: update seen tenders"
             git push
           else
             echo "No new tenders found. Nothing to commit."
