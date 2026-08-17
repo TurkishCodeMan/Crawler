@@ -11,7 +11,7 @@ load_dotenv()
 URL = "https://ihale.tpic.gov.tr/"
 
 # Default keywords if none provided in environment
-DEFAULT_KEYWORDS = ['kamyon', 'kepçe', 'araç', "binek","4x4",'traktör', 'kiralama', 'doğrudan temin', 'arazöz', 'sulama', 'tanker']
+DEFAULT_KEYWORDS = ['kamyon', 'kepçe', 'araç', "binek","4x4",'traktör', 'kiralama', 'doğrudan temin', 'arazöz', 'sulama', 'tanker','beko-loder','beko','loder','jcb','kullan','öde','temin','kira','Ay']
 
 def get_keywords():
     """Returns a list of keywords to search for."""
