@@ -1,6 +1,6 @@
-# TPIC İhale Monitor (GitHub Actions)
+#Monitor (GitHub Actions)
 
-Bu proje, TPIC (Turkish Petroleum International Company) ihale sayfasını periyodik olarak kontrol eden, belirlediğiniz anahtar kelimelere uyan yeni bir ihale çıktığında bunu Telegram üzerinden size bildiren **ücretsiz** bir takip aracıdır.
+Bu proje,sitede ihale sayfasını periyodik olarak kontrol eden, belirlediğiniz anahtar kelimelere uyan yeni bir ihale çıktığında bunu Telegram üzerinden size bildiren **ücretsiz** bir takip aracıdır.
 
 Sistem, sunucu maliyeti olmadan **GitHub Actions** üzerinde 7/24 çalışacak şekilde tasarlanmıştır.
 
