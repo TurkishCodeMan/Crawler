@@ -1,4 +1,4 @@
-#Monitor (GitHub Actions)
+# Monitor (GitHub Actions)
 
 Bu proje,sitede ihale sayfasını periyodik olarak kontrol eden, belirlediğiniz anahtar kelimelere uyan yeni bir ihale çıktığında bunu Telegram üzerinden size bildiren **ücretsiz** bir takip aracıdır.
 
